@@ -1,0 +1,279 @@
+/* ---------- Design tokens ---------- */
+:root{
+  --ink: #1F2A24;        /* deep forest-ink background */
+  --ink-soft: #3A473F;
+  --paper: #F3EFE6;      /* warm paper card */
+  --paper-dim: #E8E2D2;
+  --moss: #5C7361;       /* muted secondary */
+  --ochre: #C98A2C;      /* accent — price / highlights */
+  --ochre-dark: #A8701F;
+  --whatsapp: #25D366;   /* reserved ONLY for the chat action */
+  --whatsapp-dark: #1DA851;
+  --ring: #E6C56B;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Work Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin:0;
+  padding:0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width:100%; display:block; }
+
+a{ color:inherit; }
+
+button{ font-family: inherit; cursor:pointer; }
+
+/* ---------- Header ---------- */
+.site-header{
+  padding: 3.5rem 1.5rem 2.5rem;
+  text-align:center;
+  position: relative;
+  border-bottom: 1px solid rgba(243,239,230,0.12);
+}
+
+.site-header::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0;
+  height:6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ochre) 0 28px,
+    transparent 28px 40px
+  );
+  opacity:0.55;
+}
+
+.shop-name{
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.shop-tagline{
+  font-size: 1rem;
+  color: var(--paper-dim);
+  max-width: 34ch;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ---------- Filter bar ---------- */
+.filter-bar{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 0.6rem;
+  justify-content:center;
+  padding: 1.75rem 1.5rem 0.5rem;
+}
+
+.filter-chip{
+  background: transparent;
+  border: 1px solid rgba(243,239,230,0.3);
+  color: var(--paper-dim);
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  transition: all 0.15s ease;
+}
+
+.filter-chip:hover{
+  border-color: var(--ochre);
+  color: var(--paper);
+}
+
+.filter-chip.active{
+  background: var(--ochre);
+  border-color: var(--ochre);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- Catalogue grid ---------- */
+.catalogue{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2.6rem 1.8rem;
+  padding: 2.5rem clamp(1.2rem, 4vw, 3rem) 5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ---------- Product card = hang tag ---------- */
+.tag-wrap{
+  position: relative;
+  padding-top: 22px; /* room for the string */
+}
+
+.tag-string{
+  position:absolute;
+  top:0; left:50%;
+  width:2px;
+  height:22px;
+  background: rgba(243,239,230,0.35);
+  transform: translateX(-50%) rotate(var(--tilt, 0deg));
+  transform-origin: bottom center;
+}
+
+.product-card{
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 1.1rem 1.1rem 1.3rem;
+  transform: rotate(var(--tilt, 0deg));
+  transform-origin: top center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.tag-wrap:nth-child(3n+1){ --tilt: -1.6deg; }
+.tag-wrap:nth-child(3n+2){ --tilt: 1.1deg; }
+.tag-wrap:nth-child(3n+3){ --tilt: -0.6deg; }
+
+.product-card:hover{
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.34);
+}
+
+.punch-hole{
+  position:absolute;
+  top: 22px;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width:14px; height:14px;
+  background: var(--ink);
+  border-radius:50%;
+  box-shadow: inset 0 0 0 2px var(--paper-dim);
+  z-index:2;
+}
+
+.product-image{
+  width:100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.9rem;
+  background: var(--paper-dim);
+}
+
+.product-category{
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 0.3rem;
+}
+
+.product-name{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 0 0 0.4rem;
+  line-height:1.25;
+}
+
+.product-desc{
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  flex-grow:1;
+}
+
+.product-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 0.6rem;
+  border-top: 1px dashed rgba(31,42,36,0.25);
+  padding-top: 0.9rem;
+}
+
+.product-price{
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ochre-dark);
+}
+
+.out-of-stock-badge{
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #A34A3E;
+  background: rgba(163,74,62,0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.chat-btn{
+  display:inline-flex;
+  align-items:center;
+  gap: 0.4rem;
+  background: var(--whatsapp);
+  color: #fff;
+  border:none;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: background 0.15s ease, transform 0.1s ease;
+  text-decoration:none;
+}
+
+.chat-btn:hover{ background: var(--whatsapp-dark); }
+.chat-btn:active{ transform: scale(0.97); }
+
+.chat-btn.disabled{
+  background: var(--paper-dim);
+  color: var(--ink-soft);
+  pointer-events:none;
+}
+
+.chat-btn svg{ width:16px; height:16px; flex-shrink:0; }
+
+/* ---------- Empty state ---------- */
+.empty-state{
+  text-align:center;
+  padding: 4rem 1rem;
+  color: var(--paper-dim);
+  font-family: var(--font-body);
+  grid-column: 1 / -1;
+}
+
+/* ---------- Footer ---------- */
+.site-footer{
+  text-align:center;
+  padding: 2rem 1rem 3rem;
+  color: rgba(243,239,230,0.45);
+  font-size: 0.8rem;
+}
+
+/* ---------- Accessibility ---------- */
+a:focus-visible, button:focus-visible{
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .product-card{ transition:none; }
+}
