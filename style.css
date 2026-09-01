@@ -87,13 +87,14 @@ button{ font-family: inherit; cursor:pointer; }
   box-shadow: 0 14px 30px rgba(0,0,0,0.35);
 }
 
-.promo-video-frame iframe{
+.promo-video-frame video{
   position: absolute;
   top:0; left:0;
   width:100%;
   height:100%;
   border:0;
-  pointer-events: none; /* prevents clicks from opening YouTube / showing controls */
+  object-fit: cover;
+  pointer-events: none; /* stops clicks from ever revealing controls */
 }
 
 /* ---------- Filter bar ---------- */

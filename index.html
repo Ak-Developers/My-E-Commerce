@@ -16,19 +16,20 @@
   </header>
 
   <!-- PROMO VIDEO
-       Replace YOUR_VIDEO_ID below with your own YouTube video ID.
-       Example: if your video URL is https://youtube.com/watch?v=AbC123xyz
-       then YOUR_VIDEO_ID is AbC123xyz
+       Put your video file in this same folder and name it promo.mp4
+       (or change the filename below to match yours).
        Delete this whole <section> block if you don't want a video. -->
   <section class="promo-video">
     <div class="promo-video-frame">
-      <iframe
-        src="videos/WhatsApp Video 2026-09-01 at 09.18.30.mp4"
-        title="Shop promo video"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <video
+        src="promo.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        disablepictureinpicture
+        disableremoteplayback>
+      </video>
     </div>
   </section>
 
