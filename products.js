@@ -35,7 +35,7 @@ const PRODUCTS = [
     category: "Home",
     price: 3200,
     description: "Matte-glazed ceramic dripper and mug, made in small batches. Fits standard No. 2 filters.",
-    image: "https://unsplash.com/photos/selective-focus-photography-of-clear-glass-perfume-bottle--j6LLsAehUo",
+    image: "https://images.unsplash.com/photo-1708733145706-82da0d0596e9?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     inStock: true,
   },
   {
