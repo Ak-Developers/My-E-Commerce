@@ -54,7 +54,7 @@ const PRODUCTS = [
     price: 950,
     description: "Brass and glass bead drop earrings, hypoallergenic hooks. Each pair is slightly one-of-a-kind.",
     image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
-    inStock: true,
+    inStock: false,
   },
   {
     id: "p5",
