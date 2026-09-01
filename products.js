@@ -7,7 +7,7 @@
 
 // ---- 1. YOUR SHOP SETTINGS ----
 const SHOP_CONFIG = {
-  shopName: "AK Stores",
+  shopName: "MOHA FRAGRANCES ",
   tagline: "Browse the catalogue, tap a piece, chat with us on WhatsApp.",
   // Your WhatsApp number in international format, digits only, no + or spaces.
   // Example: Kenya number 0712 345 678 -> "254712345678"
@@ -35,7 +35,7 @@ const PRODUCTS = [
     category: "Home",
     price: 3200,
     description: "Matte-glazed ceramic dripper and mug, made in small batches. Fits standard No. 2 filters.",
-    image: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=600&q=80",
+    image: "https://unsplash.com/photos/selective-focus-photography-of-clear-glass-perfume-bottle--j6LLsAehUo",
     inStock: true,
   },
   {
