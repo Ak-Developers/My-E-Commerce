@@ -71,6 +71,30 @@ button{ font-family: inherit; cursor:pointer; }
   line-height: 1.5;
 }
 
+/* ---------- Promo video ---------- */
+.promo-video{
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.promo-video-frame{
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+
+.promo-video-frame iframe{
+  position: absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
 /* ---------- Filter bar ---------- */
 .filter-bar{
   display:flex;
